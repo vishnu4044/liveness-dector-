@@ -1,0 +1,19 @@
+gather example
+
+python gather_examples.py --input videos/fake.mp4 --output dataset/fake --detector face_detector --skip 1
+
+python gather_examples.py --input videos/real.mp4 --output dataset/real --detector face_detector --skip 4
+
+
+train liveness
+
+
+python train_liveness.py --dataset dataset --model liveness.model --le le.pickle
+
+python train_liveness.py --dataset dataset --model liveness.model --le le.pickle --plot po/p1.png
+
+
+live nessdemo
+
+
+python liveness_demo.py --model liveness.model --le le.pickle --detector face_detector
